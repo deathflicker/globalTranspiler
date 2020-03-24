@@ -1,0 +1,96 @@
+body{
+	background-color: black;
+}
+.leftDiv{
+	left: 0.5%;
+	background-color: rgba(225,195,6,0.5);
+	position: fixed;
+	height: 100%;
+	width: 50%;
+	text-align: center;
+	color: rgba(255,255,255,0.5);
+}
+.rightDiv{
+	text-align: center;
+	color: rgba(255,255,255,0.5);
+	position: fixed;
+	background-color: rgba(5,71,246,0.5);
+	right: 1%;
+	left: 51%;
+	width: 48.5%;
+	height: 100%;
+}
+.leftTextArea{
+	resize: none;
+	color: rgba(147,0,255,1);
+	height: 90%;
+	width: 90%;
+}
+.rightTextArea{
+	resize: none;
+	color: rgba(147,0,255,1);
+	height: 90%;
+	width: 90%;
+
+}
+.errorLabel{
+	display: none;
+	padding-left: 2px;
+	color: red;
+	position: fixed;
+	bottom: 0.5%;
+	left: 5%;
+	width: 40%;
+	background-color: black;
+}
+.footer{
+	border-radius: 16px;
+	right: 1%;
+	display: flex;
+	vertical-align: middle;
+	height: 5%;
+	background-color: rgba(101,212,104,0);
+	width: auto;
+	position: fixed;
+	bottom: 0%;
+	justify-content: center;
+	text-align: center;
+}
+.convertButton{
+	display: none;
+	border-color: darkgreen;
+	border-radius: 16px;
+	background-color: rgba(0,140,0,0.4);
+  	color: green;
+  	text-align: center;
+  	text-decoration: none;
+  	font-size: 12px;
+  	transition-duration: 0.3s;
+  	cursor: pointer;
+}
+.convertButton:hover{
+	color: white;
+	width: auto;
+	font-size: 16px;
+	background-color: darkgreen; 
+  	border-color: darkgreen;
+}
+.clearButton{
+	border-color: darkred;
+	border-radius: 16px;
+	background-color: rgba(140,0,0,0.4);
+  	color: red;
+  	text-align: center;
+  	text-decoration: none;
+  	display: flex;
+  	font-size: 12px;
+  	transition-duration: 0.3s;
+  	cursor: pointer;
+}
+.clearButton:hover{
+	color: white;
+	width: auto;
+	font-size: 16px;
+	background-color: darkred;
+	border-color: darkred;
+}

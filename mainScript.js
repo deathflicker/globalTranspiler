@@ -1,0 +1,82 @@
+//Define all variables here
+var convertButton = document.getElementById("convertButton");
+var zeroOption = document.getElementById("zeroOption");
+var leftTextArea = document.getElementById("leftTextArea");
+var rightTextArea = document.getElementById("rightTextArea");
+var errorLabel = document.getElementById("errorLabel");
+
+
+/*
+**********************************************************************
+*/
+
+
+// Show convert button only when a language is selected.
+function convertBtnOn(){
+	convertButton.style.display = 'flex';
+	zeroOption.style.display = 'none';
+}
+
+//Clear Button Pressed
+function clearBtnClick(){
+	if(leftTextArea.value==""){
+		alert('Console is already empty.')
+	}
+	else{
+		leftTextArea.value = "";
+	}
+}
+
+//Convert Button Pressed
+function convertBtnClick(){
+
+//Clear error screen
+errorLabel.innerHTML='';
+
+// An array to store all the errors that will occur
+var errors = [];
+	//Clear Right Text Area , works as screen refresh
+rightTextArea.value='';
+
+// error label visibility none
+errorLabel.style.display="none";
+	//to check which language the user wants to convert
+var currentLanguage = document.getElementById("mainMenu").value;
+//if the python console if not empty, the conversation will proceed.
+if(leftTextArea.value!=''){
+	//When the selected language is c++
+	if(currentLanguage=='C++'){
+		code = leftTextArea.value.split("\n");
+		//Loop or compiler that checks the whole code for any error.
+		for(counter in code){
+			// If the user uses print function
+			if(code[counter].includes('print')){
+				rightTextArea.value = rightTextArea.value+code[counter].replace("print","cout").replace("(","<<").replace(")","")+"\n";
+			}
+			//If there is blank line
+			else if(code[counter] == ''){
+				rightTextArea.value = rightTextArea.value+'\n';
+			}
+			//Store all the errors in errors array
+			else{
+				errors.push(counter)
+			}
+		}
+		// Check if there is any error
+		if(errors.length>0){
+			errorLabel.style.display = "flex";
+			//Loop to iterate through errors array
+			for(errorCounter in errors){
+				errorLabel.innerHTML=errorLabel.innerHTML+"Error(line "+(parseInt(errors[errorCounter])+1)+"): Undefined Expression."+"<br>";
+			}
+		}
+	}
+	else{
+		alert('This language is not supported yet..we are working on it.');
+	}
+}
+//empty python console will result in showing this error.
+else{
+	alert('Error: Empty Console');
+}
+}

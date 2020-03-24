@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Transpiler</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+<!-- This div will contain the python code-->
+
+<div class="leftDiv" id="leftDiv">
+	<u>Python</u>
+	<p>
+		<!-- Enter your python code that you would like to transpile-->
+
+		<textarea class="leftTextArea" id="leftTextArea" rows="37" cols="60"></textarea>
+	</p>
+</div>
+
+<!-- This Div will show you the transpiled code for your selected language-->
+
+<div class="rightDiv" id="rightDiv">
+
+	<!-- Select a programming language-->
+
+	<select id="mainMenu" onchange="convertBtnOn()" style="background-color: rgba(5,71,246,0.5); color: rgba(255,255,255,0.5); width: 80%;">
+		<!--Zero Option-->
+		<option id="zeroOption" style="display: flex;">
+			--Select a programming language--
+		</option>
+		<!-- First Option-->
+		<option>
+			Java
+		</option>
+		<!-- Second Option-->
+		<option>
+			C++
+		</option>
+	</select>
+	<p>
+		<!-- Your transpiled code is visible here. It is non editable.-->
+
+		<textarea style="background-color: #A6A9B0" class="rightTextArea" id="rightTextArea" rows="37" cols="60" readonly="true"></textarea>
+	</p>
+
+</div>
+
+<div class="errorDiv" id="errorDiv">
+	<label id="errorLabel" class="errorLabel"></label>
+</div>
+
+<!-- The convert button and the clear button resides here -->
+
+<div class="footer" id="footer">
+	<!-- Press this clear button to clear all your python codes -->
+
+	<button onclick="clearBtnClick()" class="clearButton" id="clearButton">X</button>&nbsp&nbsp
+	<!-- Press this convert button to convert your python code into the language that you have chosen-->
+	<button onclick="convertBtnClick()" class="convertButton" id="convertButton">convert</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- JavaScript begins -->
+
+
+<script type="text/javascript">
+
+// Change Python Code COLOR script
+
+	function colorChangeFunction(){
+		var a = Math.floor(Math.random()*255);
+		var b = Math.floor(Math.random()*255);
+		var c = Math.floor(Math.random()*255);
+		var changeTextColor = document.getElementById("leftTextArea");
+		changeTextColor.style.color = 'rgb('+a+','+b+','+c+')';
+		setTimeout(colorChangeFunction,1000);
+	}
+	setTimeout(colorChangeFunction,1000);
+</script>
+<script type="text/javascript" src="mainScript.js"></script>
+</body>
+</html>
