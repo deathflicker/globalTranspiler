@@ -13,7 +13,7 @@
 	<p>
 		<!-- Enter your python code that you would like to transpile-->
 
-		<textarea class="leftTextArea" id="leftTextArea" rows="37" cols="60"></textarea>
+		<textarea class="leftTextArea" id="leftTextArea" rows="34" cols="60"></textarea>
 	</p>
 </div>
 
@@ -40,13 +40,16 @@
 	<p>
 		<!-- Your transpiled code is visible here. It is non editable.-->
 
-		<textarea style="background-color: #A6A9B0" class="rightTextArea" id="rightTextArea" rows="37" cols="60" readonly="true"></textarea>
+		<textarea style="background-color: #A6A9B0" class="rightTextArea" id="rightTextArea" rows="34" cols="60" readonly="true"></textarea>
 	</p>
 
 </div>
 
+<!-- Error Label and Remove error button resides here-->
+
 <div class="errorDiv" id="errorDiv">
-	<label id="errorLabel" class="errorLabel"></label>
+	<button id="removeErrorBtn" onclick="removeError()" class="removeErrorBtn">X</button>
+	<textarea readonly="true" id="errorLabel" class="errorLabel"></textarea>
 </div>
 
 <!-- The convert button and the clear button resides here -->
@@ -56,7 +59,7 @@
 
 	<button onclick="clearBtnClick()" class="clearButton" id="clearButton">X</button>&nbsp&nbsp
 	<!-- Press this convert button to convert your python code into the language that you have chosen-->
-	<button onclick="convertBtnClick()" class="convertButton" id="convertButton">convert</button>
+	<button onclick="convertBtnClick()" disabled="disabled" class="convertButton" id="convertButton">convert</button>
 </div>
 
 
